@@ -1,10 +1,7 @@
 node_modules
 .env
 .DS_Store
-controllers
-db
 public
 seeds
-utils
+helpers.js
 views
-models
