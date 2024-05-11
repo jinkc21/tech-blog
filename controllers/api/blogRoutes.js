@@ -3,12 +3,13 @@ const { Blog } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
+  console.log("Incoming Data: ", req.body)
   try {
     const newBlog = await Blog.create({
       ...req.body,
       username: req.session.username,
     });
-
+    console.log("New Data: ", newBlog)
     res.status(200).json(newBlog);
   } catch (err) {
     res.status(400).json(err);
