@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/blog/:id', async (req, res) => {
+router.get('/blogs/:id', async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
@@ -37,13 +37,13 @@ router.get('/blog/:id', async (req, res) => {
         },
         {
           model: Comment,
-          include: [User]
+          include: [Blog]
         }
       ],
     });
 
     const blog = blogData.get({ plain: true });
-    console.log("Blog Data: ",blog);
+    // console.log("Blog Data: ",blog);
     res.render('blog', {
       ...blog,
       logged_in: req.session.logged_in
@@ -53,6 +53,29 @@ router.get('/blog/:id', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+router.get('/comments/:id', async (req, res) => {
+  try {
+    const commentData = await Comment.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
+    });
+
+    const comment = commentData.get({ plain: true });
+    res.render('comment', {
+      ...comment,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    console.log("Error: ", err)
+    res.status(500).json(err);
+  }
+});
+
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {

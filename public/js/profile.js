@@ -42,5 +42,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.btn-primary')
+  .querySelector('.btn-danger')
   .addEventListener('click', delButtonHandler);
