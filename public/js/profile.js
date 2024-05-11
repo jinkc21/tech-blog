@@ -3,6 +3,7 @@ const newFormHandler = async (event) => {
 
   const title = document.querySelector('#blog-title').value.trim();
   const contents = document.querySelector('#blog-desc').value.trim();
+ 
   //console.log("Sending Data: ", title, content);
   if (title && contents) {
     const response = await fetch(`/api/blogs`, {
@@ -22,6 +23,7 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+  
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
