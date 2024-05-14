@@ -1,20 +1,20 @@
 const newCommentHandler = async (event) => {
     event.preventDefault();
   
-    const blog_id = document.querySelector('.new-comment-form').data-id;
+    const blog_id = document.querySelector('[data-id]').dataset.id;
     const comment = document.querySelector('#comment-text').value.trim();
-    // console.log("Sending Data: ", comment);
+    console.log("Sending Data: ", comment, blog_id );
     if (comment) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
-        body: JSON.stringify({ blog_id, comment }),
+        body: JSON.stringify({ comment, blog_id }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        // document.location.reload();
       } else {
         alert('Failed to create comment');
       }
