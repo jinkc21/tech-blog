@@ -24,18 +24,18 @@ https://stormy-springs-23447-75adf226bfd1.herokuapp.com/
 
 When visiting the site for the first time, users are presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in.
 The homepage shows existing blog posts that include the post title and the date created.
-[homepage](public/images/homepage.png)
+[homepage](/images/homepage.png)
 When users click on dashboard or login in the navigation they are prompted to either sign up or sign in.
 The login page allows existing users to login using their email and password. New users can sign up with a username, email, and password.
-[login](public/images/login.png)
+[login](/images/login.png)
 When signed in to the site users see navigation links for the homepage, the dashboard, and the option to log out.
 Clicking on an existing blog post will display the post title, contents, post creator’s username, and date created for that post.
-[blog](public/images/blog.png)
+[blog](/images/blog.png)
 Users also have the option to leave a comment if they are logged in.
-[comment](public/images/comment.png)
+[comment](/images/comment.png)
 Clicking on the dashboard option in the navigation will take users to the dashboard and presented with any blog posts they have already created and the option to add a new blog post.
 Users also have the option to delete their current blogs.
-[dashboard](public/images/dashboard.png)
+[dashboard](/images/dashboard.png)
 The logout option in the navigation will log users out of their session.
 The session will also end after a specific amount of time and log out the user.
 
