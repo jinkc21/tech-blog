@@ -3,7 +3,7 @@ const newCommentHandler = async (event) => {
   
     const blog_id = document.querySelector('[data-id]').dataset.id;
     const comment = document.querySelector('#comment-text').value.trim();
-    console.log("Sending Data: ", comment, blog_id );
+    // console.log("Sending Data: ", comment, blog_id );
     if (comment) {
       const response = await fetch(`/api/comments`, {
         method: 'POST',
@@ -14,7 +14,7 @@ const newCommentHandler = async (event) => {
       });
   
       if (response.ok) {
-        // document.location.reload();
+        document.location.reload();
       } else {
         alert('Failed to create comment');
       }

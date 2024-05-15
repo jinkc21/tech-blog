@@ -23,6 +23,9 @@ const newFormHandler = async (event) => {
 };
 
 const delButtonHandler = async (event) => {
+ // console.log("clicked on :", this)
+ // console.log("clicked on :", event.target)
+ // console.log("clicked on :", event.target.getAttribute('data-id'))
   
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -43,6 +46,12 @@ document
   .querySelector('.new-blog-form')
   .addEventListener('submit', newFormHandler);
 
+  /*
 document
   .querySelector('.btn-danger')
+  .addEventListener('click', delButtonHandler);
+*/
+
+document
+  .querySelector('.blog-list')
   .addEventListener('click', delButtonHandler);

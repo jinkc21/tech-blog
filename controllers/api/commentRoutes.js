@@ -16,7 +16,7 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const comments = commentData.map((comment) => comment.get({ plain: true }));
-    console.log("comment data: ", comments)
+    // console.log("comment data: ", comments)
     // Pass serialized data and session flag into template
     res.render('comments', { 
       comments, 
@@ -32,7 +32,7 @@ router.get('/:id', async (req, res) => {
     const commentData = await Comment.findByPk(req.params.id, {
       include: [
         {
-          model: User,
+          model: user,
           attributes: ['username'],
         },
         {
@@ -43,25 +43,26 @@ router.get('/:id', async (req, res) => {
     });
 
     const comment = commentData.get({ plain: true });
+    // console.log("Comment Data: ", comment)
     res.render('comment', {
       ...comment,
       logged_in: req.session.logged_in
     });
   } catch (err) {
-    console.log("Error: ", err)
+    // console.log("Error: ", err)
     res.status(500).json(err);
   }
 });
 
 router.post('/', withAuth, async (req, res) => {
-  console.log("Incoming Data: ", req.body)
+  // console.log("Incoming Data: ", req.body)
   try {
     const newComment = await Comment.create({
       ...req.body,
-      blog_id: req.session.blog_id,
+      blog_id: req.body.blog_id,
       user_id: req.session.user_id,
     });
-    console.log("New Data: ", newComment)
+    // console.log("New Data: ", newComment)
     res.status(200).json(newComment);
   } catch (err) {
     res.status(400).json(err);
