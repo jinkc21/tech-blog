@@ -1,6 +1,4 @@
-# tech-blog
-
-# 14 Model-View-Controller (MVC): Tech Blog
+# (MVC): Tech Blog
 
 ## Description
 
@@ -24,30 +22,35 @@ https://stormy-springs-23447-75adf226bfd1.herokuapp.com/
 
 ## Usage
 
-
 When visiting the site for the first time, users are presented with the homepage, which includes existing blog posts if any have been posted; navigation links for the homepage and the dashboard; and the option to log in.
-When users click on the homepage option they are taken to the homepage.
-When users click on any other links in the navigation they are prompted to either sign up or sign in.
-The login page allows existing users to login using their email and password. New users can sign up with a username, email, and password.
-When signed in to the site users see navigation links for the homepage, the dashboard, and the option to log out.
 The homepage shows existing blog posts that include the post title and the date created.
+[homepage](public/images/homepage.png)
+When users click on dashboard or login in the navigation they are prompted to either sign up or sign in.
+The login page allows existing users to login using their email and password. New users can sign up with a username, email, and password.
+[login](public/images/login.png)
+When signed in to the site users see navigation links for the homepage, the dashboard, and the option to log out.
 Clicking on an existing blog post will display the post title, contents, post creator’s username, and date created for that post.
+[blog](public/images/blog.png)
 Users also have the option to leave a comment if they are logged in.
+[comment](public/images/comment.png)
 Clicking on the dashboard option in the navigation will take users to the dashboard and presented with any blog posts they have already created and the option to add a new blog post.
 Users also have the option to delete their current blogs.
+[dashboard](public/images/dashboard.png)
 The logout option in the navigation will log users out of their session.
 The session will also end after a specific amount of time and log out the user.
 
-[alt text](assets/images/screenshot.png)
-
-
 ## Credits
+Documentation for express handlebars helped design the views:
+https://www.npmjs.com/package/express-handlebars
 
-List your collaborators, if any, with links to their GitHub profiles.
+Express session official readme helped create the sessions:
+https://www.npmjs.com/package/express-handlebars
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+Sequelize documentation helped with associations:
+https://sequelize.org/master/manual/assocs.html
 
-If you followed tutorials, include links to those here as well.
+This resource helped with deleting blogs:
+https://www.w3docs.com/learn-javascript/bubbling-and-capturing.html
 
 ## License
 
