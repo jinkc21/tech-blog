@@ -44,7 +44,7 @@ Documentation for express handlebars helped design the views:
 https://www.npmjs.com/package/express-handlebars
 
 Express session official readme helped create the sessions:
-https://www.npmjs.com/package/express-handlebars
+https://github.com/expressjs/session#cookie
 
 Sequelize documentation helped with associations:
 https://sequelize.org/master/manual/assocs.html
